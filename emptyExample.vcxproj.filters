@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Triangulo.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Collisions.cpp" />
+    <ClCompile Include="src\utils\Vector2D.cpp" />
+    <ClCompile Include="src\components\DeAcceleration.cpp" />
+    <ClCompile Include="src\components\ShowAtOppositeSide.cpp" />
+    <ClCompile Include="src\components\Transform.cpp" />
+    <ClCompile Include="src\ecs\Manager.cpp" />
+    <ClCompile Include="src\components\PlayerCtrl.cpp" />
+    <ClCompile Include="src\components\PlayerRender.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Triangulo.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Collisions.h" />
+    <ClInclude Include="src\utils\InputHandler.h" />
+    <ClInclude Include="src\utils\mpl.h" />
+    <ClInclude Include="src\utils\Singleton.h" />
+    <ClInclude Include="src\utils\Vector2D.h" />
+    <ClInclude Include="src\components\DeAcceleration.h" />
+    <ClInclude Include="src\components\DisableOnExit.h" />
+    <ClInclude Include="src\components\ShowAtOpposideSide.h" />
+    <ClInclude Include="src\components\Transform.h" />
+    <ClInclude Include="src\ecs\Component.h" />
+    <ClInclude Include="src\ecs\ecs.h" />
+    <ClInclude Include="src\ecs\Entity.h" />
+    <ClInclude Include="src\ecs\Manager.h" />
+    <ClInclude Include="src\components\PlayerCtrl.h" />
+    <ClInclude Include="src\components\PlayerRender.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>
