@@ -8,6 +8,7 @@ void ofApp::setup() {
 
 void ofApp::update() {
     mngr_->update();
+    mngr_->refresh();
 }
 
 void ofApp::draw() {
@@ -40,4 +41,5 @@ void ofApp::createEnemyH() { // Enemigo horizontal
     Entity* enemy = mngr_->addEntity();
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
     enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
+    enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
 }

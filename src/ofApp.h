@@ -5,7 +5,8 @@
 #include "./ecs/Manager.h"
 #include "./components/Transform.h"
 #include "./components/PlayerCtrl.h"
-#include "../src/components/PlayerRender.h"
+#include "./components/PlayerRender.h"
+#include "./components/DisableOnExit.h"
 #include "Triangulo.h"
 
 
