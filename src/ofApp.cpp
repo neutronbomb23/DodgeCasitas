@@ -28,7 +28,6 @@ void ofApp::update() {
         trianguloAzul.update(velocidad, false);
     }
 
-   
     mngr_->update();
 }
 
@@ -50,8 +49,8 @@ void ofApp::keyReleased(int key) {
 
 void ofApp::createPlayer1() {
     Entity* player1 = mngr_->addEntity();
-    player1->addComponent<Transform>(_TRANSFORM);
-    player1->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'o','l'}, teclasPulsadas);
+    player1->addComponent<Transform>(_TRANSFORM)->setPosY(ofGetHeight() / 4 - 100);
     player1->addComponent<PlayerRender>(_DRAW);
+    player1->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'o', 'l'});
     //Player Renderer
 }

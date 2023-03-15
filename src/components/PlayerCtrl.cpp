@@ -1,9 +1,10 @@
 #include "PlayerCtrl.h"
+#include "PlayerRender.h"
 
-PlayerCtrl::PlayerCtrl(pair<char, char> Keys, bool* KeysPressed) {
+PlayerCtrl::PlayerCtrl(pair<char, char> Keys) {
     up = false; down = false;
     keys = Keys;
-    keysPressed = KeysPressed;
+    movementDistance = ofGetHeight() / 4;
 }
 
 void PlayerCtrl::initComponent() {
@@ -12,15 +13,16 @@ void PlayerCtrl::initComponent() {
 }
 
 void PlayerCtrl::update() {
-
-    if (ofGetKeyPressed(keys.first) && !ofGetKeyPressed(keys.second)) {
-        tr->setVel(Vector2D(0, -1));
-        pR->dirUp();
-        
+    if (ofGetKeyPressed(keys.first) && !ofGetKeyPressed(keys.second)) { // Tecla correspondiente pulsada
+        if (tr->getPos().getY() - movementDistance > 0) { // No se sale de los limites
+            tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() - movementDistance)); // Desplaza
+            pR->dirUp(); // Cambia la direccion (Para renderizar)
+        }
     }
-    else if (ofGetKeyPressed(keys.second) && !ofGetKeyPressed(keys.first)) {
-        tr->setVel(Vector2D(0, 1));
-        pR->dirDown();
+    else if (ofGetKeyPressed(keys.second) && !ofGetKeyPressed(keys.first)) { // Tecla correspondiente pulsada
+        if (tr->getPos().getY() + movementDistance < ofGetHeight()) { // No se sale de los limites
+            tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() + movementDistance)); // Desplaza
+            pR->dirDown(); // Cambia la direccion (Para renderizar)
+        }
     }
-    else(tr->setVel(Vector2D(0, 0)));
 }
