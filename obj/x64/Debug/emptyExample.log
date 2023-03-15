@@ -1,4 +1,4 @@
-﻿  PlayerCtrl.cpp
+﻿  ofApp.cpp
   Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
 C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks\math\ofMatrix4x4.h(326,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
 C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks\math\ofMatrix4x4.h(331,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos

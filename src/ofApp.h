@@ -20,11 +20,8 @@ public:
     void keyReleased(int key);
 
     void createPlayer1();
+    void createEnemyH();
 
 private:
-    Triangulo trianguloRojo;
-    Triangulo trianguloAzul;
-    float velocidad = 5;
-    bool teclasPulsadas[256] = { false };
     Manager* mngr_ = nullptr;
 };

@@ -20,7 +20,6 @@ Transform::Transform(Vector2D Position, Vector2D Velocity, float Width, float He
 
 void Transform::update() {
 	position = position + velocity;
-	cout << position.getX() << " " << position.getY() << endl;
 }
 
 float Transform::getW() {
