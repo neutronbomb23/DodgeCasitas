@@ -7,6 +7,7 @@
 #include "./components/PlayerCtrl.h"
 #include "./components/PlayerRender.h"
 #include "./components/DisableOnExit.h"
+#include "./components/ScreenBounce.h"
 #include "Triangulo.h"
 
 
@@ -22,6 +23,9 @@ public:
 
     void createPlayer1();
     void createEnemyH();
+    void createEnemyD();
+    void createEnemyCD();
+    void createEnemyINV();
 
 private:
     Manager* mngr_ = nullptr;

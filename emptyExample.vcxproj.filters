@@ -46,6 +46,7 @@
     <ClInclude Include="src\ecs\Manager.h" />
     <ClInclude Include="src\components\PlayerCtrl.h" />
     <ClInclude Include="src\components\PlayerRender.h" />
+    <ClInclude Include="src\components\ScreenBounce.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

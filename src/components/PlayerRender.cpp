@@ -7,11 +7,9 @@ void PlayerRender::initComponent() {
 
 void PlayerRender::render() {
     ofPushMatrix();
-    ofTranslate(tr->getPos().getX(), tr->getPos().getY());
-    if (dir == -1) {
-        ofRotateXDeg(180);
-    }
     ofSetColor(color);
-    ofDrawTriangle(0, 0, 20, 40, -20, 40);
+    ofTranslate(tr->getPos().getX(), tr->getPos().getY());
+    if (dir == -1) { ofRotateXDeg(180); }
+    ofDrawTriangle(0, 0, tr->getW() / 2, tr->getH(), -tr->getW() / 2, tr->getH());
     ofPopMatrix();
 }

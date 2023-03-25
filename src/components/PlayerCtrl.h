@@ -13,7 +13,7 @@ using namespace ecs;
 class PlayerCtrl : public Component {
 private:
 	Transform* tr = nullptr;
-	PlayerRender* pR = nullptr;
+	PlayerRender* im = nullptr;
 
 	bool up; bool down;
 	pair<char, char> keys;
