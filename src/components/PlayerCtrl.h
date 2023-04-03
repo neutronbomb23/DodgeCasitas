@@ -15,9 +15,12 @@ private:
 	Transform* tr = nullptr;
 	PlayerRender* im = nullptr;
 
-	bool up; bool down;
 	pair<char, char> keys;
 	double movementDistance;
+	// Input
+	int timeBetweenInputs = 500; 
+	int timeNextInput;
+	bool up = false; bool down = false;
 
 public:
 	PlayerCtrl(){}
