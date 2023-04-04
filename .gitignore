@@ -1,9 +1,10 @@
-
 *.obj
 *.ipch
 *.exe
 *.vsidx
 *.vsidx
 *.tlog
-*.exe
 *.pdb
+.vs/emptyExample/v17/.suo
+*.db
+*.bin
