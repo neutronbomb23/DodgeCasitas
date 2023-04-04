@@ -1,4 +1,3 @@
-
 #pragma once
 #include "../ecs/ecs.h"
 #include "../ecs/Entity.h"

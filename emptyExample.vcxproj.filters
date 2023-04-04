@@ -18,6 +18,8 @@
     <ClCompile Include="src\ecs\Manager.cpp" />
     <ClCompile Include="src\components\PlayerCtrl.cpp" />
     <ClCompile Include="src\components\PlayerRender.cpp" />
+    <ClCompile Include="src\components\RotationComponent.cpp" />
+    <ClCompile Include="src\components\HorizontalEnemyRender.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -47,6 +49,8 @@
     <ClInclude Include="src\components\PlayerCtrl.h" />
     <ClInclude Include="src\components\PlayerRender.h" />
     <ClInclude Include="src\components\ScreenBounce.h" />
+    <ClInclude Include="src\components\RotationComponent.h" />
+    <ClInclude Include="src\components\HorizontalEnemyRender.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

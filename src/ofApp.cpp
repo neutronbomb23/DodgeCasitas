@@ -33,7 +33,6 @@ void ofApp::createPlayer1() {
     player1->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
     player1->addComponent<PlayerRender>(_DRAW);
     player1->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'w', 's'});
-    //Player Renderer
 }
 
 void ofApp::createEnemyH() { // Enemigo horizontal
@@ -44,7 +43,7 @@ void ofApp::createEnemyH() { // Enemigo horizontal
 
     Entity* enemy = mngr_->addEntity();
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
-    enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
+    enemy->addComponent<HorizontalEnemyRender>(_DRAW); 
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
 }
 
@@ -58,9 +57,10 @@ void ofApp::createEnemyD() { // Enemigo diagonal
 
     Entity* enemy = mngr_->addEntity();
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction * Speed, Size, Size);
-    enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
+    enemy->addComponent<HorizontalEnemyRender>(_DRAW);
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
     enemy->addComponent<ScreenBounce>(_SCREENBOUNCE);
+    enemy->addComponent<RotationComponent>(_ROTATION);
 }
 
 void ofApp::createEnemyCD() { // Enemigo cambio de dirección

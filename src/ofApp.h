@@ -8,6 +8,8 @@
 #include "./components/PlayerRender.h"
 #include "./components/DisableOnExit.h"
 #include "./components/ScreenBounce.h"
+#include "./components/RotationComponent.h"
+#include "./components/HorizontalEnemyRender.h"
 #include "Triangulo.h"
 
 

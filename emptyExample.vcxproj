@@ -180,6 +180,8 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\components\HorizontalEnemyRender.cpp" />
+    <ClCompile Include="src\components\RotationComponent.cpp" />
     <ClCompile Include="src\components\DeAcceleration.cpp" />
     <ClCompile Include="src\components\PlayerCtrl.cpp" />
     <ClCompile Include="src\components\PlayerRender.cpp" />
@@ -193,6 +195,8 @@
     <ClCompile Include="src\utils\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\HorizontalEnemyRender.h" />
+    <ClInclude Include="src\components\RotationComponent.h" />
     <ClInclude Include="src\components\ScreenBounce.h" />
     <ClInclude Include="src\components\DeAcceleration.h" />
     <ClInclude Include="src\components\DisableOnExit.h" />

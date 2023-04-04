@@ -8,8 +8,15 @@ void PlayerRender::initComponent() {
 void PlayerRender::render() {
     ofPushMatrix();
     ofSetColor(color);
+
+    if (dir == -1) { tr->setR(180); }
+    else { tr->setR(0); }
+
+    //Transformaciones
     ofTranslate(tr->getPos().getX(), tr->getPos().getY());
-    if (dir == -1) { ofRotateXDeg(180); }
-    ofDrawTriangle(0, 0, tr->getW() / 2, tr->getH(), -tr->getW() / 2, tr->getH());
+    ofRotateDeg(tr->getR(), 0, 0, 1);
+    ofTranslate(-tr->getH() / 2, -tr->getW() / 2);
+
+    ofDrawTriangle(0, 0, tr->getW() / 2, tr->getH(), tr->getW(), 0);
     ofPopMatrix();
 }

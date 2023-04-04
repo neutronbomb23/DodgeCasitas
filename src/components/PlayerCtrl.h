@@ -1,6 +1,6 @@
 #pragma once
-#include "../ecs/ecs.h"
 #include "../ofApp.h"
+#include "../ecs/ecs.h"
 #include "../ecs/Entity.h"
 #include "../ecs/Component.h"
 #include "../utils/Vector2D.h"

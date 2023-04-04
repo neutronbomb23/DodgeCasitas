@@ -11,6 +11,7 @@ namespace ecs {
 		_FOLLOW = 5,
 		_DRAW = 6,
 		_SCREENBOUNCE = 7,
+		_ROTATION = 8,
 
 		// do not remove this
 		_LAST_CMP_ID

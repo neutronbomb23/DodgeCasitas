@@ -2,3 +2,5 @@
 *.obj
 *.ipch
 *.exe
+*.vsidx
+*.vsidx
