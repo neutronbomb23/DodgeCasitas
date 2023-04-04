@@ -25,38 +25,27 @@ void ofApp::keyReleased(int key) {
 
 }
 
-void ofApp::createPlayer1() {
+void ofApp::createPlayer1(Vector2D Position, Vector2D Direction, int Size) {
     Entity* player1 = mngr_->addEntity();
-    Vector2D Position = Vector2D(100, 100);
-    Vector2D Direction = Vector2D(0, 0);
-    int Size = 50;
     player1->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
     player1->addComponent<PlayerRender>(_DRAW);
     player1->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'w', 's'});
 }
 
-void ofApp::createEnemyH() { // Enemigo horizontal
-    double Size = 50;
-    double Speed = 2;
-    Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 2);
-    Vector2D Direction = Vector2D(-1, 0) * Speed;
-
+void ofApp::createEnemyH(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo horizontal
     Entity* enemy = mngr_->addEntity();
-    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
+    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Size, Size);
     enemy->addComponent<HorizontalEnemyRender>(_DRAW); 
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
 }
 
-void ofApp::createEnemyD() { // Enemigo diagonal
-    double Size = 80;
-    double Speed = 2;
-    Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 2);
-    Vector2D Direction = Vector2D(-0.75, -1);
+void ofApp::createEnemyD(Vector2D Position, int Speed, int Size) { // Enemigo diagonal
+    Vector2D Direction = Vector2D(-1, 0);
     if (ofRandom(2)) { Direction.setY(1); }
     else { Direction.setY(-1); }
 
     Entity* enemy = mngr_->addEntity();
-    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction * Speed, Size, Size);
+    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Size, Size);
     enemy->addComponent<DiagonalEnemyRender>(_DRAW);
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
     enemy->addComponent<ScreenBounce>(_SCREENBOUNCE);
