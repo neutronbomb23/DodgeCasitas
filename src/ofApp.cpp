@@ -48,16 +48,16 @@ void ofApp::createEnemyH() { // Enemigo horizontal
 }
 
 void ofApp::createEnemyD() { // Enemigo diagonal
-    double Size = 50;
+    double Size = 80;
     double Speed = 2;
-    Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 3);
-    Vector2D Direction = Vector2D(-1, 0);
+    Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 2);
+    Vector2D Direction = Vector2D(-0.75, -1);
     if (ofRandom(2)) { Direction.setY(1); }
     else { Direction.setY(-1); }
 
     Entity* enemy = mngr_->addEntity();
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction * Speed, Size, Size);
-    enemy->addComponent<HorizontalEnemyRender>(_DRAW);
+    enemy->addComponent<DiagonalEnemyRender>(_DRAW);
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
     enemy->addComponent<ScreenBounce>(_SCREENBOUNCE);
     enemy->addComponent<RotationComponent>(_ROTATION);

@@ -4,3 +4,6 @@
 *.exe
 *.vsidx
 *.vsidx
+*.tlog
+*.exe
+*.pdb

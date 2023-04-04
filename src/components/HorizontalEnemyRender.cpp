@@ -11,8 +11,8 @@ void HorizontalEnemyRender::render() {
 
     //Transformaciones
     ofTranslate(tr->getPos().getX(), tr->getPos().getY());
-    ofRotateDeg(tr->getR(), 0, 0, 1);
-    ofTranslate(-tr->getH() / 2, -tr->getW() / 2);
+    ofRotateDeg(45, 0, 0, 1);
+    ofTranslate(-tr->getW() / 2, -tr->getH() / 2);
 
     ofDrawRectangle(0, 0, tr->getW(), tr->getH());
     ofPopMatrix();

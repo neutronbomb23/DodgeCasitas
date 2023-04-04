@@ -15,7 +15,7 @@ void PlayerRender::render() {
     //Transformaciones
     ofTranslate(tr->getPos().getX(), tr->getPos().getY());
     ofRotateDeg(tr->getR(), 0, 0, 1);
-    ofTranslate(-tr->getH() / 2, -tr->getW() / 2);
+    ofTranslate(-tr->getW() / 2, -tr->getH() / 2);
 
     ofDrawTriangle(0, 0, tr->getW() / 2, tr->getH(), tr->getW(), 0);
     ofPopMatrix();

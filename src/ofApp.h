@@ -10,6 +10,7 @@
 #include "./components/ScreenBounce.h"
 #include "./components/RotationComponent.h"
 #include "./components/HorizontalEnemyRender.h"
+#include "./components/DiagonalEnemyRender.h"
 #include "Triangulo.h"
 
 

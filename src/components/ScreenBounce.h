@@ -8,7 +8,6 @@ class ScreenBounce : public Component {
 private:
 	Transform* tr = nullptr;
 	Vector2D collisionVector;
-	float upBound, downBound;
 
 public:
 	ScreenBounce(){}
