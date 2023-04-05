@@ -10,6 +10,7 @@
 #include "./components/RotationComponent.h"
 #include "./components/HorizontalEnemyRender.h"
 #include "./components/DiagonalEnemyRender.h"
+#include "./components/ChangeDirectionComponent.h"
 
 struct rect {
     float x, y, w, h;

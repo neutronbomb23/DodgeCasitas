@@ -92,6 +92,7 @@ void ofApp::createEnemyCD(Vector2D Position, Vector2D Direction, int Speed, int 
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
     enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
+    enemy->addComponent<ChangeDirectionComponent>(_CHANGEDIRECTION, nRows);
 }
 
 void ofApp::createEnemyINV(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo invertir controles
@@ -106,6 +107,7 @@ void ofApp::collision() { // Metodo que gestiona todas las colisiones (menos ent
         auto playerTr = player->getComponent<Transform>(_TRANSFORM);
         rect playerRect = { playerTr->getPos().getX(), playerTr->getPos().getY(), playerTr->getW(), playerTr->getH() };
     
+        //Enemigos de daño
         for (auto enemy: mngr_->getEntitiesByGroup(_grp_ENEMIES_DAMAGE)){
             auto enemyTr = enemy->getComponent<Transform>(_TRANSFORM);
             rect enemyRect = { enemyTr->getPos().getX(), enemyTr->getPos().getY(), enemyTr->getW(), enemyTr->getH() };
@@ -115,10 +117,13 @@ void ofApp::collision() { // Metodo que gestiona todas las colisiones (menos ent
             }
         }
 
+        //Enemigos de efecto
         for (auto enemyEffect : mngr_->getEntitiesByGroup(_grp_ENEMIES_EFFECT)) {
-            // Si algun jugador colisiona llama a la funcion del efecto correspondiente y se destruye el enemigo
-            if (false) {
+            auto enemyTr = enemyEffect->getComponent<Transform>(_TRANSFORM);
+            rect enemyRect = { enemyTr->getPos().getX(), enemyTr->getPos().getY(), enemyTr->getW(), enemyTr->getH() };
+            if (collides(playerRect, enemyRect)) {  // Si algun jugador colisiona llama a la funcion del efecto correspondiente y se destruye el enemigo
                 enemyEffect->setAlive(false);
+                cout << "EFECTO JODETE" << endl;
             }
         }
     }

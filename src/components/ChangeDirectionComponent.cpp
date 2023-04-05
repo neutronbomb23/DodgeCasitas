@@ -5,5 +5,9 @@ void ChangeDirectionComponent::initComponent() {
 }
 
 void ChangeDirectionComponent::update() {
-
+	if (!activated && tr->getPos().getX() < ofGetWidth() * changeLine) {
+		cout << "NEVERGONNAGIVEYOUUP" << nLineas << endl;
+		// CAMBIO DE LINEA
+		activated = true;
+	}
 }
