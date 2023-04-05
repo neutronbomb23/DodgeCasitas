@@ -21,6 +21,6 @@ public:
 		else if (tr->getPos().getY() <= 0) { collisionVector = Vector2D(0, 1); }
 		else { collisionVector = Vector2D(0, 0); }
 		tr->setVel(tr->getVel() - (collisionVector * ((tr->getVel() * collisionVector) * 2)));
-		cout << tr->getPos().getX() << " " << tr->getPos().getY() << endl;
+		//cout << tr->getPos().getX() << " " << tr->getPos().getY() << endl;
 	}
 };
