@@ -16,6 +16,7 @@ private:
     Manager* mngr_ = nullptr;
     // Info
     const static int nRows = 4;
+    bool end = false;
     // Generación de enemigos
     int timeNextSpawn;
     int delay = 5000;
@@ -35,4 +36,6 @@ public:
     void createEnemyD(Vector2D Position, int Speed = 4, int Size = 80);
     void createEnemyCD(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
     void createEnemyINV(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
+
+    void collision();
 };

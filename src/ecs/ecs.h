@@ -23,7 +23,8 @@ namespace ecs {
 	enum grpId : grpId_type {
 		_grp_GENERAL = 0,
 		_grp_PLAYERS = 1,
-		_grp_ENEMIES = 2,
+		_grp_ENEMIES_DAMAGE = 2,
+		_grp_ENEMIES_EFFECT = 3,
 		_LAST_GRP_ID
 	};
 	constexpr grpId_type maxGroupId = _LAST_GRP_ID;

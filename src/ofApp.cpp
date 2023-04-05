@@ -11,6 +11,7 @@ void ofApp::update() {
     mngr_->update();
     mngr_->refresh();
     spawnEnemies();
+    collision();
 }
 
 void ofApp::draw() {
@@ -98,4 +99,26 @@ void ofApp::createEnemyINV(Vector2D Position, Vector2D Direction, int Speed, int
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
     enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
+}
+
+void ofApp::collision() { // Metodo que gestiona todas las colisiones (menos entre jugadores)
+    for (auto player : mngr_->getEntitiesByGroup(_grp_PLAYERS)) { // Para todos los players
+        auto playerTr = player->getComponent<Transform>(_TRANSFORM);
+        //if(playerTr->getPos().getX())
+        
+        
+        if (false) {// Si algun jugador colisiona con algun enemigo que haga daño se acaba el juego
+            for (auto enemy : mngr_->getEntitiesByGroup(_grp_ENEMIES_DAMAGE)) {
+                enemy->setAlive(false);
+                cout << "GAME OVER!" << endl;
+            }
+        }
+
+        for (auto enemyEffect : mngr_->getEntitiesByGroup(_grp_ENEMIES_EFFECT)) {
+            // Si algun jugador colisiona llama a la funcion del efecto correspondiente y se destruye el enemigo
+            if (false) {
+                enemyEffect->setAlive(false);
+            }
+        }
+    }
 }
