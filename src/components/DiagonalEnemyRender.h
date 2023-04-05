@@ -10,7 +10,7 @@ using namespace ecs;
 
 class DiagonalEnemyRender : public Component {
 private:
-	ofColor color = (155, 0, 0, 155);
+	ofColor color = ofColor(230, 230, 0);
 	Transform* tr = nullptr;
 public:
 	DiagonalEnemyRender() {}

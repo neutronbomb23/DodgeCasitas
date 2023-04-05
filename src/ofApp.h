@@ -1,5 +1,4 @@
 #pragma once
-
 #include "ofMain.h"
 #include "./ecs/Entity.h"
 #include "./ecs/Manager.h"
@@ -11,8 +10,6 @@
 #include "./components/RotationComponent.h"
 #include "./components/HorizontalEnemyRender.h"
 #include "./components/DiagonalEnemyRender.h"
-#include "Triangulo.h"
-
 
 class ofApp : public ofBaseApp {
 private:

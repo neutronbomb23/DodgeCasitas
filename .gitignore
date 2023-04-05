@@ -8,3 +8,5 @@
 .vs/emptyExample/v17/.suo
 *.db
 *.bin
+*.tlog
+obj/x64/Debug/emptyExample.tlog/link.command.1.tlog

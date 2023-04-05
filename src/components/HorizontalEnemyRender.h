@@ -10,7 +10,7 @@ using namespace ecs;
 
 class HorizontalEnemyRender : public Component {
 private:
-	ofColor color = (155, 0, 0, 155);
+	ofColor color = ofColor(210, 0, 0);
 	Transform* tr = nullptr;
 public:
 	HorizontalEnemyRender() {}

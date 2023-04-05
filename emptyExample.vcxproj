@@ -180,6 +180,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\components\ChangeDirectionComponent.cpp" />
     <ClCompile Include="src\components\DiagonalEnemyRender.cpp" />
     <ClCompile Include="src\components\HorizontalEnemyRender.cpp" />
     <ClCompile Include="src\components\RotationComponent.cpp" />
@@ -191,11 +192,11 @@
     <ClCompile Include="src\ecs\Manager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
-    <ClCompile Include="src\Triangulo.cpp" />
     <ClCompile Include="src\utils\Collisions.cpp" />
     <ClCompile Include="src\utils\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\ChangeDirectionComponent.h" />
     <ClInclude Include="src\components\DiagonalEnemyRender.h" />
     <ClInclude Include="src\components\HorizontalEnemyRender.h" />
     <ClInclude Include="src\components\RotationComponent.h" />
@@ -211,7 +212,6 @@
     <ClInclude Include="src\ecs\Entity.h" />
     <ClInclude Include="src\ecs\Manager.h" />
     <ClInclude Include="src\ofApp.h" />
-    <ClInclude Include="src\Triangulo.h" />
     <ClInclude Include="src\utils\Collisions.h" />
     <ClInclude Include="src\utils\InputHandler.h" />
     <ClInclude Include="src\utils\mpl.h" />

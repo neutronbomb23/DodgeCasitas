@@ -7,9 +7,6 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Triangulo.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\utils\Collisions.cpp" />
     <ClCompile Include="src\utils\Vector2D.cpp" />
     <ClCompile Include="src\components\DeAcceleration.cpp" />
@@ -21,6 +18,7 @@
     <ClCompile Include="src\components\RotationComponent.cpp" />
     <ClCompile Include="src\components\HorizontalEnemyRender.cpp" />
     <ClCompile Include="src\components\DiagonalEnemyRender.cpp" />
+    <ClCompile Include="src\components\ChangeDirectionComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -29,9 +27,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Triangulo.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\utils\Collisions.h" />
@@ -53,6 +48,7 @@
     <ClInclude Include="src\components\RotationComponent.h" />
     <ClInclude Include="src\components\HorizontalEnemyRender.h" />
     <ClInclude Include="src\components\DiagonalEnemyRender.h" />
+    <ClInclude Include="src\components\ChangeDirectionComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
