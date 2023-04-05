@@ -11,6 +11,10 @@
 #include "./components/HorizontalEnemyRender.h"
 #include "./components/DiagonalEnemyRender.h"
 
+struct rect {
+    float x, y, w, h;
+};
+
 class ofApp : public ofBaseApp {
 private:
     Manager* mngr_ = nullptr;
@@ -38,4 +42,6 @@ public:
     void createEnemyINV(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
 
     void collision();
+    bool collides(rect obj1, rect obj2);
+    void deleteAllEnemies();
 };
