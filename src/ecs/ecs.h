@@ -21,8 +21,9 @@ namespace ecs {
 
 	using grpId_type = unsigned __int8;
 	enum grpId : grpId_type {
-		_grp_PLAYERS = 0,
-		_grp_ENEMIES = 1,
+		_grp_GENERAL = 0,
+		_grp_PLAYERS = 1,
+		_grp_ENEMIES = 2,
 		_LAST_GRP_ID
 	};
 	constexpr grpId_type maxGroupId = _LAST_GRP_ID;
