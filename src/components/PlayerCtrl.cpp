@@ -2,7 +2,6 @@
 #include "PlayerRender.h"
 
 PlayerCtrl::PlayerCtrl(pair<char, char> Keys) {
-    up = false; down = false;
     keys = Keys;
 }
 
@@ -15,28 +14,25 @@ void PlayerCtrl::initComponent() {
 void PlayerCtrl::update() {
     movementDistance = ofGetHeight() / 4;
     
-    if (ofGetKeyPressed(keys.first)) { // Tecla correspondiente pulsada
-        up = true;
-    }
-    else if (ofGetKeyPressed(keys.second)) { // Tecla correspondiente pulsada
-        down = true;
-    }
-
-    if (ofGetCurrentTime().getAsMilliseconds() >= timeNextInput) {
-        if (up) {
+    if (!keyPressed) {
+        if (ofGetKeyPressed(keys.first)) { // Tecla correspondiente pulsada
             if (tr->getPos().getY() - movementDistance > 0) { // No se sale de los limites
                 tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() - movementDistance)); // Desplaza
                 im->dirUp(); // Cambia la direccion (Para renderizar)
             }
-            up = false;
+            keyPressed = true;
         }
-    else if (down) {
-        if (tr->getPos().getY() + movementDistance < ofGetHeight()) { // No se sale de los limites
-            tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() + movementDistance)); // Desplaza
-            im->dirDown(); // Cambia la direccion (Para renderizar)
+        else if (ofGetKeyPressed(keys.second)) { // Tecla correspondiente pulsada
+            if (tr->getPos().getY() + movementDistance < ofGetHeight()) { // No se sale de los limites
+                tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() + movementDistance)); // Desplaza
+                im->dirDown(); // Cambia la direccion (Para renderizar)
+            }
+            keyPressed = true;
         }
-        down = false;
+        if (keyPressed) timeNextInput = ofGetCurrentTime().getAsMilliseconds() + timeBetweenInputs;
     }
-    timeNextInput = ofGetCurrentTime().getAsMilliseconds() + timeBetweenInputs;
+
+    if (keyPressed && ofGetCurrentTime().getAsMilliseconds() >= timeNextInput) {
+        keyPressed = false;
     }
 }

@@ -18,9 +18,9 @@ private:
 	pair<char, char> keys;
 	double movementDistance;
 	// Input
-	int timeBetweenInputs = 500; 
+	int timeBetweenInputs = 200; 
 	int timeNextInput;
-	bool up = false; bool down = false;
+	bool keyPressed = false;
 
 public:
 	PlayerCtrl(){}

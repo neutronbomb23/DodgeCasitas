@@ -9,7 +9,7 @@ void PlayerRender::render() {
     ofPushMatrix();
     ofSetColor(color);
 
-    if (dir == -1) { tr->setR(180); }
+    if (dir == 1) { tr->setR(180); }
     else { tr->setR(0); }
 
     //Transformaciones
