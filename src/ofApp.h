@@ -17,6 +17,8 @@
 class ofApp : public ofBaseApp {
 private:
     Manager* mngr_ = nullptr;
+    // Info
+    const static int nRows = 4;
     // Generación de enemigos
     int timeNextSpawn;
     int delay = 5000;
@@ -31,9 +33,9 @@ public:
     void keyReleased(int key);
 
     void spawnEnemies();
-    void createPlayer1(Vector2D Position = Vector2D(100, ofGetHeight()/8), Vector2D Direction = Vector2D(0, 0), int Size = 50);
-    void createEnemyH(Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 2), Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
-    void createEnemyD(Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 2), int Speed = 3, int Size = 80);
-    void createEnemyCD(Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 2), Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
-    void createEnemyINV(Vector2D Position = Vector2D(ofGetWidth(), ofGetHeight() / 2), Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
+    void createPlayer1(Vector2D Position = Vector2D(100, ofGetHeight() / (2*nRows)), Vector2D Direction = Vector2D(0, 0), int Size = 50);
+    void createEnemyH(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
+    void createEnemyD(Vector2D Position, int Speed = 4, int Size = 80);
+    void createEnemyCD(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
+    void createEnemyINV(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
 };

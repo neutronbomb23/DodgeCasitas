@@ -34,28 +34,35 @@ void ofApp::createPlayer1(Vector2D Position, Vector2D Direction, int Size) {
 }
 
 void ofApp::spawnEnemies() {
-    if (ofGetCurrentTime().getAsMilliseconds() >= timeNextSpawn) {
-        Vector2D Position = Vector2D(ofGetWidth(), (ofGetHeight()/8) + rand()%4 * (ofGetHeight() / 4));
-        int type = rand() % 4;
-        switch (type) {
-            case 0:
-                createEnemyH(Position);
-                break;
+    if (ofGetCurrentTime().getAsMilliseconds() >= timeNextSpawn) { // Tiempo
+        // Numero de enemigos
+        int nDamageEnemies = 1; 
+        if (rand()%4 <= 2) ++nDamageEnemies;
 
-            case 1:
-                createEnemyD(Position);
-                break;
+        for (int i = 0; i < nDamageEnemies; ++i) {
+            Vector2D Position = Vector2D(ofGetWidth(), (ofGetHeight() / 8) + rand() % 4 * (ofGetHeight() / 4)); // Posicion de una fila aleatoria
+            
+            int type = rand() % 4;
+            switch (type) { // Eligue tipo de enemigo
+                case 0:
+                    createEnemyH(Position);
+                    break;
 
-            case 2:
-                createEnemyCD(Position);
-                break;
+                case 1:
+                    createEnemyD(Position);
+                    break;
 
-            case 3:
-                createEnemyINV(Position);
-                break;
+                case 2:
+                    createEnemyCD(Position);
+                    break;
+
+                case 3:
+                    createEnemyINV(Position);
+                    break;
+            }
         }
-        timeNextSpawn = ofGetCurrentTime().getAsMilliseconds() + delay;
-        if (delay > minDelay) delay -= 50;
+        timeNextSpawn = ofGetCurrentTime().getAsMilliseconds() + delay; // Actualiza timer
+        if (delay > minDelay) delay -= 50; // Actualiza tiempo entre spawns de enemigos
     }
 }
 
