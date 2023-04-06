@@ -10,12 +10,15 @@ using namespace ecs;
 
 class HorizontalEnemyRender : public Component {
 private:
-	ofColor color = ofColor(210, 0, 0);
 	Transform* tr = nullptr;
+	ofColor color = ofColor(210, 0, 0);
+	//Trail
+	vector<ofVec2f> trail;
+	int trailLength = 50;
 public:
 	HorizontalEnemyRender() {}
 	~HorizontalEnemyRender() {}
 	void initComponent();
-	void update() {}
+	void update();
 	void render();
 };

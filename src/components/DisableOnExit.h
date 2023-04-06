@@ -9,6 +9,7 @@ class DisableOnExit :public Component {
 private:
 	Transform* tr = nullptr;
 	int w = 0;
+	int offset = 100; // espacio extra para que desaparezcan los trails de pantalla
 
 public:
 	DisableOnExit(){}
@@ -19,8 +20,7 @@ public:
 	}
 
 	void update() { // Si un objeto con este componente sale de los limites de la ventana se destruye
-		int x = tr->getPos().getX();
-		if (x < 0 - w) {
+		if (tr->getPos().getX() < 0 - w - offset) {
 			ent_->setAlive(false); cout << "delete";
 		}
 	}
