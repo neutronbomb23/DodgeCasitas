@@ -53,4 +53,8 @@
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="CaritaEmpapada.mp3" />
+    <Media Include="bin\data\CaritaEmpapada.mp3" />
+  </ItemGroup>
 </Project>
