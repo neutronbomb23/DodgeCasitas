@@ -7,7 +7,7 @@ void ofApp::setup() {
     timeNextSpawn = ofGetCurrentTime().getAsMilliseconds() + delay;
 
     // Musica fondo
-    music.load("CaritaEmpapada.mp3");
+    music.load("./CaritaEmpapada.mp3");
 }
 
 void ofApp::update() {
