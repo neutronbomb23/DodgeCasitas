@@ -10,6 +10,8 @@ private:
 	bool activated = false;
 	int nLineas;
 	float changeLine = 0.375; // Porcentaje/100 de la linea que tiene que quedar para que cambie
+	float movementDistance;
+	int dir;
 public:
 	ChangeDirectionComponent(int NLINEAS) :nLineas(NLINEAS) {}
 	void initComponent();

@@ -5,6 +5,12 @@ void ofApp::setup() {
     mngr_ = Manager::instance();
     createPlayer1();
     timeNextSpawn = ofGetCurrentTime().getAsMilliseconds() + delay;
+
+    // Musica fondo
+    ofSoundPlayer music;
+    music.load("CaritaEmpapada.mp3");
+    //music.setVolume(0.5);
+    music.play();
 }
 
 void ofApp::update() {
@@ -123,7 +129,7 @@ void ofApp::collision() { // Metodo que gestiona todas las colisiones (menos ent
             rect enemyRect = { enemyTr->getPos().getX(), enemyTr->getPos().getY(), enemyTr->getW(), enemyTr->getH() };
             if (collides(playerRect, enemyRect)) {  // Si algun jugador colisiona llama a la funcion del efecto correspondiente y se destruye el enemigo
                 enemyEffect->setAlive(false);
-                cout << "EFECTO JODETE" << endl;
+                player->getComponent<PlayerCtrl>(_CTRL)->invertInput();
             }
         }
     }

@@ -28,4 +28,5 @@ public:
 	~PlayerCtrl() {}
 	void initComponent();
 	void update();
+	void invertInput();
 };

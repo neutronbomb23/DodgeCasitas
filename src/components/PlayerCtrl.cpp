@@ -36,3 +36,9 @@ void PlayerCtrl::update() {
         keyPressed = false;
     }
 }
+
+void PlayerCtrl::invertInput() {
+    char aux = keys.first;
+    keys.first = keys.second;
+    keys.second = aux;
+}

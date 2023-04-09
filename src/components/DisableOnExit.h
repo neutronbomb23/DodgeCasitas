@@ -21,7 +21,7 @@ public:
 
 	void update() { // Si un objeto con este componente sale de los limites de la ventana se destruye
 		if (tr->getPos().getX() < 0 - w - offset) {
-			ent_->setAlive(false); cout << "delete";
+			ent_->setAlive(false);
 		}
 	}
 };
