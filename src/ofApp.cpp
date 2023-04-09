@@ -7,10 +7,7 @@ void ofApp::setup() {
     timeNextSpawn = ofGetCurrentTime().getAsMilliseconds() + delay;
 
     // Musica fondo
-    ofSoundPlayer music;
     music.load("CaritaEmpapada.mp3");
-    //music.setVolume(0.5);
-    music.play();
 }
 
 void ofApp::update() {
@@ -95,7 +92,7 @@ void ofApp::createEnemyD(Vector2D Position, int Speed, int Size) { // Enemigo di
 
 void ofApp::createEnemyCD(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo cambio de dirección
     Entity* enemy = mngr_->addEntity(_grp_ENEMIES_DAMAGE);
-    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
+    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Size, Size);
     enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
     enemy->addComponent<ChangeDirectionComponent>(_CHANGEDIRECTION, nRows);
@@ -103,7 +100,7 @@ void ofApp::createEnemyCD(Vector2D Position, Vector2D Direction, int Speed, int 
 
 void ofApp::createEnemyINV(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo invertir controles
     Entity* enemy = mngr_->addEntity(_grp_ENEMIES_EFFECT);
-    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
+    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Size, Size);
     enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
 }

@@ -27,6 +27,8 @@ private:
     int timeNextSpawn;
     int delay = 5000;
     int minDelay = 3000;
+    // Musica fondo
+    ofSoundPlayer music;
 
 public:
     void setup();
