@@ -13,6 +13,7 @@ using namespace ecs;
 class PlayerCtrl : public Component {
 private:
 	Transform* tr = nullptr;
+	Transform* coopTr = nullptr;
 	PlayerRender* im = nullptr;
 
 	pair<char, char> keys;
@@ -29,4 +30,5 @@ public:
 	void initComponent();
 	void update();
 	void invertInput();
+	void setCoopRef(Transform* COOP);
 };

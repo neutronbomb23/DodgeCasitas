@@ -1,10 +1,10 @@
-#include "InvertPutoRender.h"
+#include "InvertRender.h"
 
-void InvertPutoRender::initComponent() {
+void InvertRender::initComponent() {
     tr = ent_->getComponent<Transform>(_TRANSFORM);
 }
 
-void InvertPutoRender::render() {
+void InvertRender::render() {
     ofTranslate(tr->getPos().getX(), tr->getPos().getY());
     ofRotateDeg(tr->getR(), 0, 0, 1);
     ofTranslate(-tr->getW() / 2, -tr->getH() / 2);

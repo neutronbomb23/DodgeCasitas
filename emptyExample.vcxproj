@@ -183,6 +183,7 @@
     <ClCompile Include="src\components\ChangeDirectionComponent.cpp" />
     <ClCompile Include="src\components\DiagonalEnemyRender.cpp" />
     <ClCompile Include="src\components\HorizontalEnemyRender.cpp" />
+    <ClCompile Include="src\components\InvertRender.cpp" />
     <ClCompile Include="src\components\RotationComponent.cpp" />
     <ClCompile Include="src\components\DeAcceleration.cpp" />
     <ClCompile Include="src\components\PlayerCtrl.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="src\components\ChangeDirectionComponent.h" />
     <ClInclude Include="src\components\DiagonalEnemyRender.h" />
     <ClInclude Include="src\components\HorizontalEnemyRender.h" />
+    <ClInclude Include="src\components\InvertRender.h" />
     <ClInclude Include="src\components\RotationComponent.h" />
     <ClInclude Include="src\components\ScreenBounce.h" />
     <ClInclude Include="src\components\DeAcceleration.h" />

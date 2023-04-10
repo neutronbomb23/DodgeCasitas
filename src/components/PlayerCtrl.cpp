@@ -42,3 +42,7 @@ void PlayerCtrl::invertInput() {
     keys.first = keys.second;
     keys.second = aux;
 }
+
+void PlayerCtrl::setCoopRef(Transform* COOP) {
+    coopTr = COOP;
+}

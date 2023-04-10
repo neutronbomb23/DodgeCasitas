@@ -3,7 +3,7 @@
 void ofApp::setup() {
     //ofToggleFullscreen(); // NO PONER PUNTOS DE INTERRUPCION CON ESTO DESCOMENTADO
     mngr_ = Manager::instance();
-    createPlayer1();
+    createPlayers();
     timeNextSpawn = ofGetCurrentTime().getAsMilliseconds() + delay;
 
     // Musica fondo
@@ -33,11 +33,20 @@ void ofApp::keyReleased(int key) {
 
 }
 
-void ofApp::createPlayer1(Vector2D Position, Vector2D Direction, int Size) {
+void ofApp::createPlayers(Vector2D Position, Vector2D Direction, int Size) {
+    Position.setY(Position.getY() + ofGetHeight() / nRows);
+
     Entity* player1 = mngr_->addEntity(_grp_PLAYERS);
     player1->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
     player1->addComponent<PlayerRender>(_DRAW);
     player1->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'w', 's'});
+
+    Position.setY(Position.getY() + ofGetHeight() / nRows);
+
+    Entity* player2 = mngr_->addEntity(_grp_PLAYERS);
+    player2->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
+    player2->addComponent<PlayerRender>(_DRAW);
+    player2->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'o', 'l'});
 }
 
 void ofApp::spawnEnemies() {
@@ -104,7 +113,7 @@ void ofApp::createEnemyCD(Vector2D Position, Vector2D Direction, int Speed, int 
 void ofApp::createEnemyINV(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo invertir controles
     Entity* enemy = mngr_->addEntity(_grp_ENEMIES_EFFECT);
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Size, Size);
-    enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
+    enemy->addComponent<InvertRender>(_DRAW); // TEMP PARA PRUEBA
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
 }
 

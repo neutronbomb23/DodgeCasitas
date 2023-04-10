@@ -8,13 +8,13 @@
 
 using namespace ecs;
 
-class InvertPutoRender : public Component {
+class InvertRender : public Component {
 private:
 	ofColor color = ofColor(50, 10, 200);
 	Transform* tr = nullptr;
 public:
-	InvertPutoRender() {}
-	~InvertPutoRender() {}
+	InvertRender() {}
+	~InvertRender() {}
 	void initComponent();
 	void update() {}
 	void render();

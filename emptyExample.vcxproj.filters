@@ -19,6 +19,7 @@
     <ClCompile Include="src\components\HorizontalEnemyRender.cpp" />
     <ClCompile Include="src\components\DiagonalEnemyRender.cpp" />
     <ClCompile Include="src\components\ChangeDirectionComponent.cpp" />
+    <ClCompile Include="src\components\InvertRender.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -49,6 +50,7 @@
     <ClInclude Include="src\components\HorizontalEnemyRender.h" />
     <ClInclude Include="src\components\DiagonalEnemyRender.h" />
     <ClInclude Include="src\components\ChangeDirectionComponent.h" />
+    <ClInclude Include="src\components\InvertRender.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
