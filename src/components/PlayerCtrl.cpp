@@ -17,15 +17,19 @@ void PlayerCtrl::update() {
     if (!keyPressed) {
         if (ofGetKeyPressed(keys.first)) { // Tecla correspondiente pulsada
             if (tr->getPos().getY() - movementDistance > 0) { // No se sale de los limites
-                tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() - movementDistance)); // Desplaza
-                im->dirUp(); // Cambia la direccion (Para renderizar)
+                if (coopTr->getPos().getY() != tr->getPos().getY() - movementDistance) { // No choca con el otro player
+                    tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() - movementDistance)); // Desplaza
+                    im->dirUp(); // Cambia la direccion (Para renderizar)
+                }
             }
             keyPressed = true;
         }
         else if (ofGetKeyPressed(keys.second)) { // Tecla correspondiente pulsada
             if (tr->getPos().getY() + movementDistance < ofGetHeight()) { // No se sale de los limites
-                tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() + movementDistance)); // Desplaza
-                im->dirDown(); // Cambia la direccion (Para renderizar)
+                if (coopTr->getPos().getY() != tr->getPos().getY() + movementDistance) { // No choca con el otro player
+                    tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() + movementDistance)); // Desplaza
+                    im->dirDown(); // Cambia la direccion (Para renderizar)
+                }
             }
             keyPressed = true;
         }

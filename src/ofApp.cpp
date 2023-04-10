@@ -47,18 +47,19 @@ void ofApp::createPlayers(Vector2D Position, Vector2D Direction, int Size) {
     Position.setY(Position.getY() + ofGetHeight() / nRows);
 
     Entity* player1 = mngr_->addEntity(_grp_PLAYERS);
-    player1->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
+    Transform* tr1 = player1->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
     player1->addComponent<PlayerRender>(_DRAW);
-    player1->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'w', 's'});
+    PlayerCtrl* ctrl1 = player1->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'w', 's'});
 
     Position.setY(Position.getY() + ofGetHeight() / nRows);
 
     Entity* player2 = mngr_->addEntity(_grp_PLAYERS);
-    player2->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
-    PlayerRender* p2R = player2->addComponent<PlayerRender>(_DRAW);
-    player2->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'o', 'l'});
+    Transform* tr2 = player2->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
+    player2->addComponent<PlayerRender>(_DRAW, ofColor(0, 255, 150));
+    PlayerCtrl* ctrl2 = player2->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'o', 'l'});
 
-    p2R->setColor(ofColor(0, 255, 150));
+    ctrl1->setCoopRef(tr2);
+    ctrl2->setCoopRef(tr1);
 }
 
 void ofApp::spawnEnemies() {
