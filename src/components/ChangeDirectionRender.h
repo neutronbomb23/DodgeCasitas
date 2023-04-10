@@ -5,14 +5,11 @@
 #include "../utils/Vector2D.h"
 #include "Transform.h"
 
-class  ChangeDirectionComponent;
-
 using namespace ecs;
 
 class ChangeDirectionRender : public Component {
 private:
 	Transform* tr = nullptr;
-	ChangeDirectionComponent* ch = nullptr;
 	// Color
 	ofColor color = ofColor(210, 0, 0);
 	// Trail

@@ -3,10 +3,7 @@
 void ChangeDirectionComponent::initComponent() {
 	tr = ent_->getComponent<Transform>(_TRANSFORM);
 	movementDistance = ofGetHeight() / nLineas;
-	if (tr->getPos().getY() < movementDistance * 2) dir = 1;
-	else if (tr->getPos().getY() > movementDistance * (nLineas - 1)) dir = -1;
-	else if (rand() % 2) { dir = -1; }
-	else { dir = 1; }
+	setDirection();
 }
 
 void ChangeDirectionComponent::update() {
@@ -14,4 +11,14 @@ void ChangeDirectionComponent::update() {
 		tr->setPos(Vector2D(tr->getPos().getX(), tr->getPos().getY() + movementDistance * dir)); // Desplaza
 		activated = true;
 	}
+}
+
+void ChangeDirectionComponent::setDirection() {
+	if (tr->getPos().getY() < movementDistance * 2) dir = 1;
+	else if (tr->getPos().getY() > movementDistance * (nLineas - 1)) dir = -1;
+	else if (rand() % 2) { dir = -1; }
+	else { dir = 1; }
+
+	if (dir == -1) { tr->setR(180); }
+	else if (dir == 1) { tr->setR(0); }
 }

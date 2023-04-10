@@ -13,6 +13,8 @@ private:
 	float movementDistance;
 	int dir;
 
+	void setDirection();
+
 public:
 	ChangeDirectionComponent(int NLINEAS) :nLineas(NLINEAS) {}
 	void initComponent();

@@ -65,11 +65,11 @@ void ofApp::createPlayers(Vector2D Position, Vector2D Direction, int Size) {
 void ofApp::spawnEnemies() {
     if (ofGetCurrentTime().getAsMilliseconds() >= timeNextSpawn) { // Tiempo
         // Numero de enemigos
-        int nDamageEnemies = 1; 
-        if (rand()%4 <= 2) ++nDamageEnemies;
+        int nEnemies = 1+ rand() % 3;
+        bool state = false;
 
-        for (int i = 0; i < nDamageEnemies; ++i) {
-            Vector2D Position = Vector2D(ofGetWidth(), (ofGetHeight() / 8) + rand() % 4 * (ofGetHeight() / 4)); // Posicion de una fila aleatoria
+        for (int i = 0; i < nEnemies; ++i) {
+            Vector2D Position = Vector2D(ofGetWidth(), (ofGetHeight() / 8) + rand() % nRows * (ofGetHeight() / nRows)); // Posicion de una fila aleatoria
             
             int type = rand() % 4;
             switch (type) { // Eligue tipo de enemigo
@@ -115,11 +115,11 @@ void ofApp::createEnemyD(Vector2D Position, int Speed, int Size) { // Enemigo di
     enemy->addComponent<RotationComponent>(_ROTATION);
 }
 
-void ofApp::createEnemyCD(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo cambio de dirección
+void ofApp::createEnemyCD(Vector2D Position, Vector2D Direction, int Speed, int Width, int Height) { // Enemigo cambio de dirección
     Entity* enemy = mngr_->addEntity(_grp_ENEMIES_DAMAGE);
-    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Size, Size);
+    enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Width, Height);
     enemy->addComponent<ChangeDirectionComponent>(_CHANGEDIRECTION, nRows);
-    enemy->addComponent<ChangeDirectionRender>(_DRAW); // TEMP PARA PRUEBA
+    enemy->addComponent<ChangeDirectionRender>(_DRAW);
     enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
 }
 
