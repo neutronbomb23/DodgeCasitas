@@ -22,6 +22,7 @@ void ofApp::update() {
 
 void ofApp::draw() {
     ofBackground(0);
+    renderRails();
     mngr_->render();
 }
 
@@ -31,6 +32,15 @@ void ofApp::keyPressed(int key) {
 
 void ofApp::keyReleased(int key) {
 
+}
+
+void ofApp::renderRails() {
+    ofSetColor(255);
+    ofDrawLine(0, ofGetHeight() * 0.25, ofGetWidth(), ofGetHeight() * 0.25);
+    ofSetColor(255);
+    ofDrawLine(0, ofGetHeight() * 0.5, ofGetWidth(), ofGetHeight() * 0.5);
+    ofSetColor(255);
+    ofDrawLine(0, ofGetHeight() * 0.75, ofGetWidth(), ofGetHeight() * 0.75);
 }
 
 void ofApp::createPlayers(Vector2D Position, Vector2D Direction, int Size) {
@@ -45,8 +55,10 @@ void ofApp::createPlayers(Vector2D Position, Vector2D Direction, int Size) {
 
     Entity* player2 = mngr_->addEntity(_grp_PLAYERS);
     player2->addComponent<Transform>(_TRANSFORM, Position, Direction, Size, Size);
-    player2->addComponent<PlayerRender>(_DRAW);
+    PlayerRender* p2R = player2->addComponent<PlayerRender>(_DRAW);
     player2->addComponent<PlayerCtrl>(_CTRL, pair<char, char> {'o', 'l'});
+
+    p2R->setColor(ofColor(0, 255, 150));
 }
 
 void ofApp::spawnEnemies() {
@@ -105,9 +117,9 @@ void ofApp::createEnemyD(Vector2D Position, int Speed, int Size) { // Enemigo di
 void ofApp::createEnemyCD(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo cambio de dirección
     Entity* enemy = mngr_->addEntity(_grp_ENEMIES_DAMAGE);
     enemy->addComponent<Transform>(_TRANSFORM, Position, Direction.normalize() * Speed, Size, Size);
-    enemy->addComponent<PlayerRender>(_DRAW); // TEMP PARA PRUEBA
-    enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
     enemy->addComponent<ChangeDirectionComponent>(_CHANGEDIRECTION, nRows);
+    enemy->addComponent<ChangeDirectionRender>(_DRAW); // TEMP PARA PRUEBA
+    enemy->addComponent<DisableOnExit>(_DISABLEONEXIT);
 }
 
 void ofApp::createEnemyINV(Vector2D Position, Vector2D Direction, int Speed, int Size) { // Enemigo invertir controles

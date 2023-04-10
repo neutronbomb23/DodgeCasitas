@@ -12,8 +12,10 @@ private:
 	float changeLine = 0.375; // Porcentaje/100 de la linea que tiene que quedar para que cambie
 	float movementDistance;
 	int dir;
+
 public:
 	ChangeDirectionComponent(int NLINEAS) :nLineas(NLINEAS) {}
 	void initComponent();
 	void update();
+	int getDir() { return dir; }
 };

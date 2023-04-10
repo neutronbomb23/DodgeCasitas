@@ -12,6 +12,7 @@
 #include "./components/DiagonalEnemyRender.h"
 #include "./components/ChangeDirectionComponent.h"
 #include "./components/InvertRender.h"
+#include "./components/ChangeDirectionRender.h"
 #include "ofSoundPlayer.h"
 
 struct rect {
@@ -38,6 +39,8 @@ public:
 
     void keyPressed(int key);
     void keyReleased(int key);
+
+    void renderRails();
 
     void spawnEnemies();
     void createPlayers(Vector2D Position = Vector2D(100, ofGetHeight() / (2*nRows)), Vector2D Direction = Vector2D(0, 0), int Size = 50);

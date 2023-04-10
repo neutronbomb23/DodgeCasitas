@@ -1,6 +1,4 @@
-﻿  InvertRender.cpp
-C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\apps\myApps\emptyExampleed\src\ecs\Entity.h(77,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\apps\myApps\emptyExampleed\src\ecs\Entity.h(83,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+﻿  ofApp.cpp
   Info: Boost.Config is older than your compiler version - probably nothing bad will happen - but you may wish to look for an update Boost version.  Define BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE to suppress this message.
 C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks\math\ofMatrix4x4.h(326,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
 C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks\math\ofMatrix4x4.h(331,1): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
@@ -8,7 +6,8 @@ C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks
 C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks\math\ofMatrix4x4.h(913,12): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
 C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks\math\ofMatrix4x4.h(914,12): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
 C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\openFrameworks\math\ofMatrix4x4.h(915,12): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
-     Creando biblioteca bin\emptyExample_debug.lib y objeto bin\emptyExample_debug.exp
+C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\apps\myApps\emptyExampleed\src\ecs\Entity.h(77,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\apps\myApps\emptyExampleed\src\ecs\Entity.h(83,1): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   emptyExample.vcxproj -> C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\apps\myApps\emptyExampleed\bin\emptyExample_debug.exe
   
   	                   2	C:\Users\pmq12\OneDrive\Escritorio\of_v0.11.2_vs2017_release\libs\fmod\lib\vs\x64\

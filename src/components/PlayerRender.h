@@ -10,9 +10,10 @@ using namespace ecs;
 
 class PlayerRender : public Component {
 private:
-	ofColor color = ofColor(255, 0, 255);
+	ofColor color = ofColor(150, 0, 255);
 	Transform* tr = nullptr;
 	int dir = 0; // -1  abajo, 0 centro, 1 arriba
+
 public:
 	PlayerRender(){}
 	~PlayerRender(){}
@@ -21,4 +22,5 @@ public:
 	void render();
 	void dirUp() { dir = 1; }
 	void dirDown() { dir = -1; }
+	void setColor(ofColor newColor) { color = newColor; }
 };
