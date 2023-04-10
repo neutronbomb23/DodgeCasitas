@@ -22,6 +22,10 @@ private:
 	int timeBetweenInputs = 200; 
 	int timeNextInput;
 	bool keyPressed = false;
+	// InputInvertido
+	bool invertedInput = false;
+	int timeUntilNormalInput;
+	int timeEffect = 4000;
 
 public:
 	PlayerCtrl(){}

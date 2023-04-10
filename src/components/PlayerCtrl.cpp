@@ -12,6 +12,8 @@ void PlayerCtrl::initComponent() {
 }
 
 void PlayerCtrl::update() {
+    if (invertedInput && ofGetCurrentTime().getAsMilliseconds() >= timeUntilNormalInput) invertInput();
+
     movementDistance = ofGetHeight() / 4;
     
     if (!keyPressed) {
@@ -45,6 +47,9 @@ void PlayerCtrl::invertInput() {
     char aux = keys.first;
     keys.first = keys.second;
     keys.second = aux;
+
+    invertedInput = !invertedInput;
+    timeUntilNormalInput = ofGetCurrentTime().getAsMilliseconds() + timeEffect;
 }
 
 void PlayerCtrl::setCoopRef(Transform* COOP) {

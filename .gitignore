@@ -27,3 +27,14 @@ obj/x64/Debug/emptyExample_debug.ilk
 .vs/emptyExample/v17/.suo
 .vs/emptyExample/v17/Browse.VC.db
 .vs/emptyExample/v17/Browse.VC.db-wal
+*.tlog
+*.tlog
+*.tlog
+*.pdb
+bin/emptyExample_debug.exe
+.vs/emptyExample/v17/.suo
+obj/x64/Debug/vc143.pdb
+obj/x64/Debug/emptyExample_debug.ilk
+obj/x64/Debug/emptyExample.tlog/link.read.1.tlog
+bin/emptyExample_debug.pdb
+*.pdb
