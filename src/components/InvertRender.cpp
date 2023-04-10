@@ -5,6 +5,7 @@ void InvertRender::initComponent() {
 }
 
 void InvertRender::render() {
+    ofPushMatrix();
     ofTranslate(tr->getPos().getX(), tr->getPos().getY());
     ofRotateDeg(tr->getR(), 0, 0, 1);
     ofTranslate(-tr->getW() / 2, -tr->getH() / 2);
@@ -22,4 +23,5 @@ void InvertRender::render() {
         tr->getW() / 2 - tr->getW() / 12, tr->getH() / 2 + tr->getW() / 3,
         tr->getW() / 2 + tr->getW() / 12, tr->getH() / 2 + tr->getW() / 3,
         tr->getW() / 2 + tr->getW() / 6, tr->getH() / 2 + tr->getW() / 6);
+    ofPopMatrix();
 }
