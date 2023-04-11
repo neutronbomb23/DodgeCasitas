@@ -45,7 +45,7 @@ public:
     void spawnEnemies();
     void createPlayers(Vector2D Position = Vector2D(100, ofGetHeight() / (2*nRows)), Vector2D Direction = Vector2D(0, 0), int Size = 50);
     void createEnemyH(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
-    void createEnemyD(Vector2D Position, int Speed = 4, int Size = 80);
+    void createEnemyD(Vector2D Position, int Speed = 4, int Size = 70);
     void createEnemyCD(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Width = 34, int Height = 50);
     void createEnemyINV(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
 

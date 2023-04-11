@@ -64,27 +64,29 @@ void ofApp::createPlayers(Vector2D Position, Vector2D Direction, int Size) {
 
 void ofApp::spawnEnemies() {
     if (ofGetCurrentTime().getAsMilliseconds() >= timeNextSpawn) { // Tiempo
-        // Numero de enemigos
-        int nEnemies = 1+ rand() % 3;
-        bool state = false;
+        int nEnemies = 1+ rand() % 4;  // Numero de enemigos en esta ronda
+        bool state = false; // ¿Se ha lanzado algun enemigo que no infrinja daño?
+        int row; // Fila en la que va a aparecer el siguiente enemigo
+        bool railsFree[nRows] = { true, true, true, true }; // Railes en los que no ha salido ningun enemigo
 
         for (int i = 0; i < nEnemies; ++i) {
-            Vector2D Position = Vector2D(ofGetWidth(), (ofGetHeight() / 8) + rand() % nRows * (ofGetHeight() / nRows)); // Posicion de una fila aleatoria
-            
+            do { row = rand() % nRows; } while (!railsFree[row]); // Eligue siguiente rail
+            railsFree[row] = false; // Marca el rail como no libre
+
+            Vector2D Position = Vector2D(ofGetWidth(), (ofGetHeight() / 8) + row * (ofGetHeight() / nRows)); // Posicion de una fila aleatoria
+
+            if (i > 1) { createEnemyINV(Position); break; } // Si ya han ocupado 2 lineas solo puede ser enemigo de estado 
             int type = rand() % 4;
             switch (type) { // Eligue tipo de enemigo
                 case 0:
                     createEnemyH(Position);
                     break;
-
                 case 1:
                     createEnemyD(Position);
                     break;
-
                 case 2:
                     createEnemyCD(Position);
                     break;
-
                 case 3:
                     createEnemyINV(Position);
                     break;
