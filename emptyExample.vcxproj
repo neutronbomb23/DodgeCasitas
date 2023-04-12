@@ -236,6 +236,10 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="bin\data\CaritaEmpapada.mp3" />
+    <Media Include="bin\data\CaritaFeliz.mp3" />
+    <Media Include="bin\data\Destroy.mp3" />
+    <Media Include="bin\data\GO.mp3" />
+    <Media Include="bin\data\WIN.mp3" />
     <Media Include="CaritaEmpapada.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

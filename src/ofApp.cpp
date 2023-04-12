@@ -9,6 +9,10 @@ void ofApp::setup() {
 
     // Musica fondo
     music.load(ofToDataPath("CaritaEmpapada.mp3"));
+    CollisionMusic.load(ofToDataPath("Destroy.mp3"));
+    HappyMusic.load(ofToDataPath("CaritaFeliz.mp3"));
+    GameOverMusic.load(ofToDataPath("GO.mp3"));
+    WinMusic.load(ofToDataPath("WIN.mp3"));
     music.setLoop(true);
     music.setVolume(0.8f);
     music.play();
@@ -49,11 +53,14 @@ void ofApp::draw() {
         ofBackground(ofColor::black);
         ofSetColor(ofColor::white);
         ofDrawBitmapString("Game Over", ofGetWidth() / 2 - 50, ofGetHeight() / 2);
+        GameOverMusic.play();
+        
     }
     else if (currentState == WIN) {
         ofBackground(ofColor::black);
         ofSetColor(ofColor::white);
         ofDrawBitmapString("YOU WIN", ofGetWidth() / 2 - 50, ofGetHeight() / 2);
+        WinMusic.play();
     }
 }
 
@@ -177,6 +184,7 @@ void ofApp::collision() { // Metodo que gestiona todas las colisiones (menos ent
             if (collides(playerRect, enemyRect)) {// Si algun jugador colisiona con algun enemigo que haga daño se acaba el juego
                 deleteAllEnemies();
                 currentState = LOOSE;
+                CollisionMusic.play();
                 music.stop();
             }
         }
@@ -188,6 +196,7 @@ void ofApp::collision() { // Metodo que gestiona todas las colisiones (menos ent
             if (collides(playerRect, enemyRect)) {  // Si algun jugador colisiona llama a la funcion del efecto correspondiente y se destruye el enemigo
                 enemyEffect->setAlive(false);
                 player->getComponent<PlayerCtrl>(_CTRL)->invertInput();
+                HappyMusic.play();
             }
         }
     }

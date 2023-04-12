@@ -33,6 +33,10 @@ private:
     int minDelay = 3000;
     // Musica fondo
     ofSoundPlayer music;
+    ofSoundPlayer WinMusic;
+    ofSoundPlayer HappyMusic;
+    ofSoundPlayer GameOverMusic;
+    ofSoundPlayer CollisionMusic;
     // Win / loose
     int tiempoInicial = 0;
     int tiempoTranscurridoMs = 0; // Tiempo transcurrido en milisegundos
