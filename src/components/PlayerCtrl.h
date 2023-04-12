@@ -35,4 +35,6 @@ public:
 	void update();
 	void invertInput();
 	void setCoopRef(Transform* COOP);
+
+	bool isInputInverted() { return invertedInput; }
 };

@@ -15,6 +15,8 @@
 #include "./components/ChangeDirectionRender.h"
 #include "ofSoundPlayer.h"
 
+enum state {PLAY, WIN, LOOSE};
+
 struct rect {
     float x, y, w, h;
 };
@@ -31,6 +33,10 @@ private:
     int minDelay = 3000;
     // Musica fondo
     ofSoundPlayer music;
+    // Win / loose
+    int tiempoTotalMs = 60000; // Tiempo total de 60 segundos en milisegundos
+    int tiempoTranscurridoMs = 0; // Tiempo transcurrido en milisegundos
+    state currentState = PLAY;
 
 public:
     void setup();
@@ -43,13 +49,15 @@ public:
     void renderRails();
 
     void spawnEnemies();
-    void createPlayers(Vector2D Position = Vector2D(100, ofGetHeight() / (2*nRows)), Vector2D Direction = Vector2D(0, 0), int Size = 50);
+    void createPlayers(Vector2D Position = Vector2D(100, ofGetHeight() / (2 * nRows)), Vector2D Direction = Vector2D(0, 0), int Size = 50);
     void createEnemyH(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
-    void createEnemyD(Vector2D Position, int Speed = 4, int Size = 70);
+    void createEnemyD(Vector2D Position, int Speed = 4, int Size = 60);
     void createEnemyCD(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Width = 34, int Height = 50);
     void createEnemyINV(Vector2D Position, Vector2D Direction = Vector2D(-1, 0), int Speed = 3, int Size = 50);
 
     void collision();
     bool collides(rect obj1, rect obj2);
     void deleteAllEnemies();
+
+    void resetGame();
 };
