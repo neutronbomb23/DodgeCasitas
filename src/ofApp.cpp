@@ -5,6 +5,7 @@ void ofApp::setup() {
     mngr_ = Manager::instance();
     createPlayers();
     timeNextSpawn = ofGetCurrentTime().getAsMilliseconds() + delay;
+    tiempoInicial = ofGetCurrentTime().getAsMilliseconds();
 
     // Musica fondo
     music.load(ofToDataPath("CaritaEmpapada.mp3"));
@@ -19,7 +20,7 @@ void ofApp::update() {
         mngr_->refresh();  
         spawnEnemies();
         collision();
-        tiempoTranscurridoMs = ofGetElapsedTimeMillis();
+        tiempoTranscurridoMs = ofGetCurrentTime().getAsMilliseconds() - tiempoInicial;
         if (tiempoTranscurridoMs >= tiempoTotalMs) {
             tiempoTranscurridoMs = tiempoTotalMs;
             currentState = WIN;
@@ -35,7 +36,7 @@ void ofApp::draw() {
         //Fondo
         ofBackground(0);
         //Progressbar
-        ofSetColor(ofColor::white);
+        ofSetColor(ofColor::gray);
         ofDrawRectangle(ofGetWidth() - 300 - 30, ofGetHeight() - 30, 300, 20);
         ofSetColor(ofColor::yellow);
         ofDrawRectangle(ofGetWidth() - 300 - 30, ofGetHeight() - 30, ofMap(tiempoTranscurridoMs, 0, tiempoTotalMs, 0, 300), 20); // Dibuja un rectángulo que representa el tiempo transcurrido
@@ -214,5 +215,5 @@ void ofApp::resetGame() {
         if (ctrl->isInputInverted()) ctrl->invertInput();
     }
     currentState = PLAY;
-    tiempoTranscurridoMs = 0;
+    tiempoInicial = ofGetCurrentTime().getAsMilliseconds();
 }

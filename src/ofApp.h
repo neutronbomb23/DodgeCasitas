@@ -34,8 +34,9 @@ private:
     // Musica fondo
     ofSoundPlayer music;
     // Win / loose
-    int tiempoTotalMs = 60000; // Tiempo total de 60 segundos en milisegundos
+    int tiempoInicial = 0;
     int tiempoTranscurridoMs = 0; // Tiempo transcurrido en milisegundos
+    int tiempoTotalMs = 60000; // Tiempo total de 60 segundos en milisegundos
     state currentState = PLAY;
 
 public:
