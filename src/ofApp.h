@@ -40,7 +40,7 @@ private:
     // Win / loose
     int tiempoInicial = 0;
     int tiempoTranscurridoMs = 0; // Tiempo transcurrido en milisegundos
-    int tiempoTotalMs = 60000; // Tiempo total de 60 segundos en milisegundos
+    int tiempoTotalMs = 20000; // Tiempo total de 60 segundos en milisegundos
     state currentState = PLAY;
 
 public:

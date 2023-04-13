@@ -8,7 +8,7 @@ void ofApp::setup() {
     tiempoInicial = ofGetCurrentTime().getAsMilliseconds();
 
     // Musica fondo
-    music.load(ofToDataPath("CaritaEmpapada.mp3"));
+    music.load(ofToDataPath("Music.mp3"));
     CollisionMusic.load(ofToDataPath("Destroy.mp3"));
     HappyMusic.load(ofToDataPath("CaritaFeliz.mp3"));
     GameOverMusic.load(ofToDataPath("GO.mp3"));
@@ -52,15 +52,19 @@ void ofApp::draw() {
     else if (currentState == LOOSE) {
         ofBackground(ofColor::black);
         ofSetColor(ofColor::white);
-        ofDrawBitmapString("Game Over", ofGetWidth() / 2 - 50, ofGetHeight() / 2);
+        music.stop();
         GameOverMusic.play();
+        ofDrawBitmapString("Game Over", ofGetWidth() / 2 - 50, ofGetHeight() / 2);
+        
         
     }
     else if (currentState == WIN) {
         ofBackground(ofColor::black);
         ofSetColor(ofColor::white);
-        ofDrawBitmapString("YOU WIN", ofGetWidth() / 2 - 50, ofGetHeight() / 2);
+        music.stop();
         WinMusic.play();
+        ofDrawBitmapString("YOU WIN", ofGetWidth() / 2 - 50, ofGetHeight() / 2);
+        
     }
 }
 
